@@ -29,7 +29,7 @@ const Article = ({
         {formatSection(section)}
       </p>
       <h2 className="font-bold text-3xl text-center font-franklin">{title}</h2>
-      <img className="hidden" src={multimedia[1].url} alt="" />
+      {}
       <p className="mx-auto text-justify font-franklin w-[80%]">{abstract}</p>
       <p className="text-right mr-2">{formatDate(published_date)}</p>
     </div>

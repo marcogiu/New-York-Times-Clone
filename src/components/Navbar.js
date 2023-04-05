@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { HiOutlineMenu, HiOutlineX, HiOutlineSearch } from "react-icons/hi";
 import { useGlobalContext } from "../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [nav, setNav] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (search) {
+      setSearch("search");
+      navigate(`/search/${search}`);
+    }
+  };
 
   // Get today date and format it
   const options = {
@@ -49,7 +59,11 @@ const Navbar = () => {
         className={
           !nav ? "hidden" : "absolute w-full h-full top-12 bg-white z-10"
         }>
-        <div className="w-full flex justify-center  mt-6">
+        <form
+          className="w-full flex justify-center  mt-6"
+          onSubmit={handleSearch}
+          autoFocus
+          onChange={(e) => setSearch(e.target.value)}>
           <input
             type="text"
             name=""
@@ -57,10 +71,12 @@ const Navbar = () => {
             placeholder="  SEARCH"
             className="border-2 w-64 rounded"
           />
-          <button className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
+          <button
+            type="submit"
+            className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
             GO
           </button>
-        </div>
+        </form>
         <div className="mt-4">
           <h4 className="font-bold font-franklin ml-[20%] mb-4">News</h4>
           <ul className="grid grid-cols-2 place-content-center mx-[20%] gap-4 mb-4">

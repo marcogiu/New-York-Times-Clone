@@ -5,7 +5,6 @@ import { useFetchHomepageData } from "../Hooks/useFetchHomepageData";
 import Article from "../components/Article";
 
 const SectionPage = () => {
-  const { formatSection } = useGlobalContext();
   const { nameSection } = useParams();
   const { articles } = useFetchHomepageData(nameSection);
 
