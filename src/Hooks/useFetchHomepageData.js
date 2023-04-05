@@ -8,7 +8,7 @@ export const useFetchHomepageData = (section) => {
   useEffect(() => {
     axios
       .get(
-        `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.API_KEY}`
+        `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
         setArticles(res.data.results);
