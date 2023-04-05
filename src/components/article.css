@@ -1,0 +1,9 @@
+.container:nth-child(2n+0) {
+  grid-column: 1;
+}
+
+.container:nth-child(3n + 1) img {
+  display: block;
+}
+
+
