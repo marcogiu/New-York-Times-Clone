@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(true);
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
@@ -60,7 +60,7 @@ const Navbar = () => {
           !nav ? "hidden" : "absolute w-full h-full top-12 bg-white z-10"
         }>
         <form
-          className="w-full flex justify-center  mt-6"
+          className="w-full flex justify-center mt-6"
           onSubmit={handleSearch}
           autoFocus
           onChange={(e) => setSearch(e.target.value)}>
@@ -85,7 +85,7 @@ const Navbar = () => {
                 <li
                   key={index}
                   onClick={() => setNav(!nav)}
-                  className="capitalize text-md">
+                  className="capitalize text-md text-center">
                   {section === "home" ? (
                     <Link to={"/"}>{formatSection(section)}</Link>
                   ) : (
@@ -97,6 +97,9 @@ const Navbar = () => {
               );
             })}
           </ul>
+          <Link to={"/feed"}>
+            <h4 className="font-bold font-franklin ml-[20%] mb-4">Feed</h4>
+          </Link>
         </div>
       </div>
     </>
