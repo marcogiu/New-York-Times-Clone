@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [nav, setNav] = useState(true);
+  const [nav, setNav] = useState(false);
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
@@ -29,17 +29,27 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="h-[85px] flex flex-col">
+      <div className="flex flex-col">
         <div className=" h-10 md:h-16 lg:h-24 flex flex-row justify-start items-center mt-1">
-          <HiOutlineMenu
-            size={20}
-            className={nav ? "hidden" : "ml-3 cursor-pointer"}
-            onClick={() => setNav(!nav)}
-          />
-          <HiOutlineSearch
-            size={20}
-            className={nav ? "hidden" : "ml-1 cursor-pointer"}
-          />
+          <div>
+            <div className="flex">
+              <HiOutlineMenu
+                size={20}
+                className={nav ? "hidden" : "ml-3 cursor-pointer"}
+                onClick={() => setNav(!nav)}
+              />
+              <HiOutlineSearch
+                size={20}
+                className={nav ? "hidden" : "ml-1 cursor-pointer"}
+              />
+            </div>
+            <p
+              className={
+                nav ? "hidden" : "hidden font-bold text-[4xl] ml-2 lg:block "
+              }>
+              {todayDate}
+            </p>
+          </div>
           <h1 className=" absolute left-[25%] right-[25%] text-center font-ancient text-2xl md:text-4xl ">
             <Link to={"/"}>The New York Times</Link>
           </h1>
@@ -49,8 +59,29 @@ const Navbar = () => {
             onClick={() => setNav(!nav)}
           />
         </div>
-        <div className="h-[35px] bg-[#f7f7f7] border-y-2 border-[#e2e2e2] flex items-center">
-          <p className="font-bold text-[0.7rem] ml-2">{todayDate}</p>
+        <div className="h-[35px] bg-[#f7f7f7] border-y-2 border-[#e2e2e2] flex items-center lg:h-[60px] lg:bg-white">
+          <p className="font-bold text-[0.7rem] ml-2 lg:hidden">{todayDate}</p>
+          <ul className="hidden lg:flex flex-row mx-auto place-content-center justify-center  ">
+            {sections.map((section, index) => {
+              return (
+                <li
+                  key={index}
+                  className="capitalize rounded-md px-2 py-1 text-md text-center hover:bg-slate-100 active:bg-slate-200">
+                  {section === "home" ? (
+                    <Link to={"/"}>{formatSection(section)}</Link>
+                  ) : (
+                    <Link to={`section/${section}`}>
+                      {formatSection(section)}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+
+            <li className=" rounded-xl px-2 py-1 font-bold hover:bg-black hover:text-white">
+              <Link to={"/feed"}>Feed</Link>
+            </li>
+          </ul>
         </div>
       </div>
 

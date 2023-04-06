@@ -25,7 +25,7 @@ const Article = ({
 
   return (
     // container
-    <div className="container border-b-2 border-black w-[90%] mx-auto h-fit">
+    <div className="container border-b-2 border-black w-[80%] mx-auto h-full">
       {/* sectionName & title */}
       <div className="section-info mt-2">
         <Link to={`/section/${section}`}>
@@ -50,12 +50,12 @@ const Article = ({
         )}
       </div>
       {/* info */}
-      <div className="mt-2 flex flex-col">
+      <div className="mt-2 flex flex-col justify-between">
         <p className="mx-auto text-justify font-franklin w-[100%]">
           {abstract}
         </p>
         <div className="flex flex-row justify-between items-center mt-2">
-          <p className="font-bold">{byline}</p>
+          {byline && <p className="font-bold">{byline}</p>}
           <p className="font-bold mr-2">{formatDate(published_date)}</p>
         </div>
       </div>
