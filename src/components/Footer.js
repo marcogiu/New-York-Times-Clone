@@ -16,19 +16,24 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center mt-2">
       <Link to={"/"} onClick={scrollToTop}>
-        <h2 className="font-bold font-ancient text-2xl">The New York Times</h2>
+        <h2 className="font-ancient text-2xl md:text-6xl">
+          The New York Times
+        </h2>
       </Link>
-      <ul className=" mt-4 grid grid-cols-3 gap-x-10 gap-y-2 border-b-2 border-black w-[90%]">
+      <ul className=" mt-4 grid grid-cols-3 lg:grid-cols-5 gap-x-10 gap-y-2 lg:gap-y-5 border-b-2 border-black w-[90%]">
         {sections.map((section, index) => {
           return (
-            <Link to={`/section/${section}`}>
-              <li
-                className="capitalize text-center"
-                key={index}
-                onClick={scrollToTop}>
-                {formatSection(section)}
-              </li>
-            </Link>
+            <li key={index} className="capitalize">
+              {section === "home" ? (
+                <Link to={"/"} onClick={scrollToTop}>
+                  {formatSection(section)}
+                </Link>
+              ) : (
+                <Link to={`/section/${section}`} onClick={scrollToTop}>
+                  {formatSection(section)}
+                </Link>
+              )}
+            </li>
           );
         })}
       </ul>
@@ -64,3 +69,14 @@ const Footer = () => {
 };
 
 export default Footer;
+
+{
+  /* <Link to={`/section/${section}`}>
+              <li
+                className="capitalize text-center lg:text-xl"
+                key={index}
+                onClick={scrollToTop}>
+                {formatSection(section)}
+              </li>
+            </Link> */
+}
