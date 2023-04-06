@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         ancient: ["Ancient", "cursive"],
-        franklin: ["Libre Franklin", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

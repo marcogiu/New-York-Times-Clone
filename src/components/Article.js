@@ -25,38 +25,37 @@ const Article = ({
 
   return (
     // container
-    <div className="container border-b-2 border-black w-[80%] mx-auto h-full">
+    <div className="container flex flex-col justify-between items-center  w-[90%] mx-auto pb-2 border-b-2 border-gray-300">
       {/* sectionName & title */}
-      <div className="section-info mt-2">
-        <Link to={`/section/${section}`}>
-          <p className="font-bold bg-black text-white p-2 w-fit ml-2 capitalize">
-            {formatSection(section)}
-          </p>
-        </Link>
-        <Link to={url} target="_blank" rel="noreferrer">
-          <h2 className="font-bold text-3xl text-center font-franklin mt-2">
+      <div>
+        {/* SectionName */}
+        <p className="text-sm font-bold h-fit w-fit mt-2 bg-gray-300 rounded text-black p-1 capitalize hover:bg-black hover:text-white active:bg-gray-800">
+          <Link to={`/section/${section}`}>{formatSection(section)}</Link>
+        </p>
+        {/* Title */}
+        <h2 className="font-extrabold uppercase text-md w-[90%] mx-auto mt-2 text-center">
+          <Link to={url} target="_blank" rel="noreferrer">
             {title}
-          </h2>
-        </Link>
+          </Link>
+        </h2>
       </div>
       {/* img */}
       <div className="mt-2">
         {multimedia && (
-          <img
-            className="hidden max-w-[80%] mx-auto"
-            src={multimedia[1].url}
-            alt=""
-          />
+          <img className="hidden" src={multimedia[1].url} alt="" />
         )}
       </div>
       {/* info */}
-      <div className="mt-2 flex flex-col justify-between">
-        <p className="mx-auto text-justify font-franklin w-[100%]">
+      <div className="mt-2 justify-self-center">
+        {/* Abstract */}
+        <p className="mx-auto text-justify text-sm w-[95%]-h-[100%]">
           {abstract}
         </p>
         <div className="flex flex-row justify-between items-center mt-2">
-          {byline && <p className="font-bold">{byline}</p>}
-          <p className="font-bold mr-2">{formatDate(published_date)}</p>
+          {/* Byline */}
+          {byline && <p className="font-bold text-xs">{byline}</p>}
+          {/* Published_date */}
+          <p className="font-bold mr-2 text-xs">{formatDate(published_date)}</p>
         </div>
       </div>
     </div>

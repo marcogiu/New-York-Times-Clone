@@ -34,13 +34,19 @@ const Navbar = () => {
           <div>
             <div className="flex">
               <HiOutlineMenu
-                size={20}
-                className={nav ? "hidden" : "ml-3 cursor-pointer"}
+                className={
+                  nav
+                    ? "hidden"
+                    : " text-2xl ml-3 cursor-pointer md:text-3xl lg:text-4xl"
+                }
                 onClick={() => setNav(!nav)}
               />
               <HiOutlineSearch
-                size={20}
-                className={nav ? "hidden" : "ml-1 cursor-pointer"}
+                className={
+                  nav
+                    ? "hidden"
+                    : "text-2xl ml-1 cursor-pointer md:text-3xl lg:text-4xl"
+                }
               />
             </div>
             <p
@@ -50,12 +56,15 @@ const Navbar = () => {
               {todayDate}
             </p>
           </div>
-          <h1 className=" absolute left-[25%] right-[25%] text-center font-ancient text-2xl md:text-4xl ">
+          <h1 className=" absolute left-[25%] right-[25%] text-center font-ancient text-2xl md:text-4xl lg:text-6xl ">
             <Link to={"/"}>The New York Times</Link>
           </h1>
           <HiOutlineX
-            size={24}
-            className={nav ? "cursor-pointer absolute right-0 mr-2" : "hidden"}
+            className={
+              nav
+                ? "text-2xl md:text-3xl lg:text-4xl cursor-pointer absolute right-0 mr-2"
+                : "hidden"
+            }
             onClick={() => setNav(!nav)}
           />
         </div>
@@ -88,7 +97,9 @@ const Navbar = () => {
       {/*  menu */}
       <div
         className={
-          !nav ? "hidden" : "absolute w-full h-full top-12 bg-white z-10"
+          !nav
+            ? "hidden"
+            : "absolute w-full h-full top-12 lg:top-28 bg-white z-10"
         }>
         <form
           className="w-full flex justify-center mt-6"

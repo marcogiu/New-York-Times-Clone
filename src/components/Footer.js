@@ -46,21 +46,21 @@ const Footer = () => {
             href="https://www.linkedin.com/in/marco-giuliani-2a20b4179/"
             target="_blank"
             rel="noreferrer">
-            <FaLinkedin size={32} />
+            <FaLinkedin className="text-2xl md:text-3xl lg:text-4xl hover:text-blue-500 active:text-blue-700" />
           </a>
           {/* github */}
           <a
             href="https://github.com/marcogiu"
             target="_blank"
             rel="noreferrer">
-            <FaGithub size={32} />
+            <FaGithub className="text-2xl md:text-3xl lg:text-4xl hover:text-gray-500 active:text-gray-700" />
           </a>
           {/* my website */}
           <a
             href="https://marcogiu.github.io/myWebsite/"
             target="_blank"
             rel="noreferrer">
-            <FaUserAlt size={32} />
+            <FaUserAlt className="text-2xl md:text-3xl lg:text-4xl hover:text-red-500 active:text-red-700" />
           </a>
         </div>
       </div>
@@ -69,14 +69,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-{
-  /* <Link to={`/section/${section}`}>
-              <li
-                className="capitalize text-center lg:text-xl"
-                key={index}
-                onClick={scrollToTop}>
-                {formatSection(section)}
-              </li>
-            </Link> */
-}
