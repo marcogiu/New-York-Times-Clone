@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const useFetchSearchData = (search) => {
-  const [loading, setLoading] = useState(false);
+  const [load, setLoad] = useState(false);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -12,10 +12,10 @@ export const useFetchSearchData = (search) => {
       )
       .then((res) => {
         setArticles(res.data.response.docs);
-        setLoading(true);
+        setLoad(true);
       })
       .catch((err) => console.log(err));
   }, [search]);
 
-  return { loading, articles };
+  return { load, articles };
 };

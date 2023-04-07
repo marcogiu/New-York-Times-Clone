@@ -9,7 +9,7 @@ const SearchResultsPage = () => {
 
   const { loading, articles } = useFetchSearchData(search);
 
-  return <div>risultati di ricerca</div>;
+  return <div>{search}</div>;
 };
 
 export default SearchResultsPage;

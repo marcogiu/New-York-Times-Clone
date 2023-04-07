@@ -7,9 +7,11 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState("");
+  const [searchBar, setSearchBar] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    e.target.reset();
     if (search) {
       setSearch("search");
       navigate(`/search/${search}`);
@@ -28,7 +30,7 @@ const Navbar = () => {
   const { sections, formatSection } = useGlobalContext();
 
   return (
-    <>
+    <div className="max-w-[1200px] mx-auto">
       <div className="flex flex-col">
         <div className=" h-10 md:h-16 lg:h-24 flex flex-row justify-start items-center mt-1">
           <div>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 className={
                   nav
                     ? "hidden"
-                    : " text-2xl ml-3 cursor-pointer md:text-3xl lg:text-4xl"
+                    : " text-2xl ml-3 cursor-pointer md:text-3xl lg:text-4xl lg:hidden"
                 }
                 onClick={() => setNav(!nav)}
               />
@@ -47,11 +49,38 @@ const Navbar = () => {
                     ? "hidden"
                     : "text-2xl ml-1 cursor-pointer md:text-3xl lg:text-4xl"
                 }
+                onClick={() => setSearchBar(!searchBar)}
               />
+              <form
+                className={
+                  nav || !searchBar
+                    ? "hidden"
+                    : "ml-2 hidden lg:flex justify-center"
+                }
+                onSubmit={handleSearch}
+                autoFocus
+                onChange={(e) => setSearch(e.target.value)}>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  autoFocus
+                  placeholder="SEARCH"
+                  className="border-2 w-64 py-1 px-2 rounded"
+                />
+                <button
+                  type="submit"
+                  onClick={() => setSearchBar(!searchBar)}
+                  className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
+                  GO
+                </button>
+              </form>
             </div>
             <p
               className={
-                nav ? "hidden" : "hidden font-bold text-[4xl] ml-2 lg:block "
+                nav
+                  ? "hidden"
+                  : "hidden font-bold text-[4xl] ml-2 lg:block lg:mt-2 "
               }>
               {todayDate}
             </p>
@@ -75,7 +104,7 @@ const Navbar = () => {
               return (
                 <li
                   key={index}
-                  className="capitalize rounded-md px-2 py-1 text-md text-center hover:bg-slate-100 active:bg-slate-200">
+                  className="capitalize rounded-md px-2 py-1 text-sm text-center hover:bg-slate-100 active:bg-slate-200">
                   {section === "home" ? (
                     <Link to={"/"}>{formatSection(section)}</Link>
                   ) : (
@@ -115,6 +144,7 @@ const Navbar = () => {
           />
           <button
             type="submit"
+            onClick={() => setNav(!nav)}
             className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
             GO
           </button>
@@ -144,7 +174,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
