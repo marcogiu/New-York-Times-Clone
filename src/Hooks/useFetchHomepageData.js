@@ -6,6 +6,8 @@ export const useFetchHomepageData = (section) => {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
+    setLoad(false);
+
     section &&
       axios
         .get(

@@ -30,7 +30,7 @@ const Navbar = () => {
   const { sections, formatSection } = useGlobalContext();
 
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="top-0 max-w-[1200px] mx-auto">
       <div className="flex flex-col">
         <div className=" h-10 md:h-16 lg:h-24 flex flex-row justify-start items-center mt-1">
           <div>
@@ -41,19 +41,21 @@ const Navbar = () => {
                     ? "hidden"
                     : " text-2xl ml-3 cursor-pointer md:text-3xl lg:text-4xl lg:hidden"
                 }
-                onClick={() => setNav(!nav)}
+                onClick={() => setNav(true)}
               />
               <HiOutlineSearch
                 className={
                   nav
                     ? "hidden"
-                    : "text-2xl ml-1 cursor-pointer md:text-3xl lg:text-4xl"
+                    : "text-2xl ml-1 cursor-pointer md:text-3xl lg:hidden"
                 }
-                onClick={() => setSearchBar(!searchBar)}
+                onClick={() => {
+                  setNav(!nav);
+                }}
               />
               <form
                 className={
-                  nav || !searchBar
+                  nav || searchBar === true
                     ? "hidden"
                     : "ml-2 hidden lg:flex justify-center"
                 }
@@ -94,7 +96,7 @@ const Navbar = () => {
                 ? "text-2xl md:text-3xl lg:text-4xl cursor-pointer absolute right-0 mr-2"
                 : "hidden"
             }
-            onClick={() => setNav(!nav)}
+            onClick={() => setNav(false)}
           />
         </div>
         <div className="h-[35px] bg-[#f7f7f7] border-y-2 border-[#e2e2e2] flex items-center lg:h-[60px] lg:bg-white">
@@ -116,7 +118,7 @@ const Navbar = () => {
               );
             })}
 
-            <li className=" rounded-xl px-2 py-1 font-bold hover:bg-black hover:text-white">
+            <li className=" rounded-md px-2 py-1 text-sm font-bold hover:bg-black hover:text-white active:bg-gray-700">
               <Link to={"/feed"}>Feed</Link>
             </li>
           </ul>
@@ -128,7 +130,7 @@ const Navbar = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute w-full h-full top-12 lg:top-28 bg-white z-10"
+            : "fixed w-full overflow-y-auto overscroll-y-none h-full top-12 lg:top-28 bg-white z-10"
         }>
         <form
           className="w-full flex justify-center mt-6"
