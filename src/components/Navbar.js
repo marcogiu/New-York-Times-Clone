@@ -3,7 +3,7 @@ import { HiOutlineMenu, HiOutlineX, HiOutlineSearch } from "react-icons/hi";
 import { useGlobalContext } from "../context";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const navigate = useNavigate();
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState("");
@@ -29,8 +29,14 @@ const Navbar = () => {
 
   const { sections, formatSection } = useGlobalContext();
 
+  if (nav === true) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "scroll";
+  }
+
   return (
-    <div className="top-0 max-w-[1200px] mx-auto">
+    <div className={nav === true ? "" : "top-0 max-w-[1200px] mx-auto"}>
       <div className="flex flex-col">
         <div className=" h-10 md:h-16 lg:h-24 flex flex-row justify-start items-center mt-1">
           <div>
