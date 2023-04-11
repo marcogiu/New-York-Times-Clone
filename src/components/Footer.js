@@ -14,13 +14,13 @@ const Footer = () => {
     });
   };
   return (
-    <div className="flex flex-col items-center mt-2 border-t-4 border-double border-black w-[80%] mx-auto">
+    <div className="flex flex-col items-center mt-2 border-t-4 border-double border-[#e2e2e2] w-[80%] mx-auto">
       <Link to={"/"} onClick={scrollToTop}>
         <h2 className="mt-2 font-ancient text-2xl md:text-6xl">
           The New York Times
         </h2>
       </Link>
-      <ul className=" mt-4 grid grid-cols-3 lg:grid-cols-5 gap-x-10 gap-y-2 lg:gap-y-5 border-b-4 border-double border-black w-[90%]">
+      <ul className=" mt-4 grid grid-cols-3 lg:grid-cols-5 gap-x-10 gap-y-2 lg:gap-y-5 border-b-4 border-double border-[#e2e2e2] w-[90%]">
         {sections.map((section, index) => {
           return (
             <li key={index} className="capitalize mb-4">

@@ -54,7 +54,11 @@ const Article = ({
         {/* img */}
         <div className="mt-2">
           {multimedia && (
-            <img className="hidden" src={multimedia[1].url} alt={title} />
+            <img
+              className="hidden shadow-slate-600 shadow-md"
+              src={multimedia[1].url}
+              alt={title}
+            />
           )}
         </div>
         {/* info */}

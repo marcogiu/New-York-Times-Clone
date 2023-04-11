@@ -5,11 +5,15 @@ import { useFetchSearchData } from "../Hooks/useFetchSearchData";
 
 const SearchResultsPage = () => {
   const { formatSection } = useGlobalContext();
-  const { search } = useParams();
+  const search = useParams();
 
   const { loading, articles } = useFetchSearchData(search);
 
-  return <div>{search}</div>;
+  return (
+    <div>
+      <h2>{search.content}</h2>
+    </div>
+  );
 };
 
 export default SearchResultsPage;
