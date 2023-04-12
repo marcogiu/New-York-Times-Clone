@@ -138,8 +138,8 @@ const Navbar = () => {
             type="text"
             name=""
             id=""
-            placeholder="  SEARCH"
-            className="border-2 w-64 rounded"
+            placeholder="SEARCH"
+            className="border-2 px-2 w-64 rounded"
           />
           <button
             type="submit"
@@ -170,7 +170,7 @@ const Navbar = () => {
               );
             })}
             <li>
-              <Link to={"/feed"}>
+              <Link to={"/feed"} onClick={() => setNav(!nav)}>
                 <h4 className="font-bold text-center">Feed</h4>
               </Link>
             </li>
