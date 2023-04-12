@@ -13,7 +13,7 @@ const SectionPage = () => {
   if (load) {
     return (
       <div className="max-w-[1000px] mx-auto">
-        <h2 className="font-bold ml-2 text-3xl capitalize">
+        <h2 className="font-bold ml-2 mt-2 text-xl md:text-2xl lg:text-3xl capitalize">
           {formatSection(nameSection) + " News"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-4">

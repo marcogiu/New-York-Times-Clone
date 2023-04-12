@@ -6,6 +6,8 @@ export const useFetchSearchData = (search) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
+    setLoad(false);
+
     axios
       .get(
         `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search}&api-key=${process.env.REACT_APP_API_KEY}`

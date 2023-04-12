@@ -8,7 +8,7 @@ const Homepage = () => {
 
   if (load) {
     return (
-      <div className="list-news max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-4">
+      <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-4">
         {articles.map((article, index) => {
           return <Article key={index} {...article} />;
         })}
@@ -17,7 +17,7 @@ const Homepage = () => {
   } else {
     return (
       <BounceLoader
-        className="list-news mx-auto my-36"
+        className="mx-auto my-36"
         color="gray"
         size={180}
         aria-label="Loading Spinner"

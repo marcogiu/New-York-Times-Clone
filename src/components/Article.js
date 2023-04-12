@@ -23,14 +23,6 @@ const Article = ({
     return new Date(date).toLocaleDateString("en-En", options);
   };
 
-  const scrollToTop = () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
   // show news
   if (section !== "admin" && section && title && abstract && byline) {
     return (
@@ -39,10 +31,8 @@ const Article = ({
         {/* sectionName & title */}
         <div>
           {/* SectionName */}
-          <p className="text-sm font-bold h-fit w-fit mt-2 bg-gray-300 rounded text-black p-1 capitalize hover:bg-black hover:text-white active:bg-gray-800">
-            <Link to={`/section/${section}`} onClick={scrollToTop()}>
-              {formatSection(section)}
-            </Link>
+          <p className="text-sm font-bold h-fit w-fit mt-2 bg-gray-300 rounded text-black p-1 capitalize ">
+            {formatSection(section)}
           </p>
           {/* Title */}
           <h2 className="font-extrabold uppercase text-md w-[90%] mx-auto mt-2 text-center">

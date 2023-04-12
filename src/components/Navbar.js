@@ -3,17 +3,16 @@ import { HiOutlineMenu, HiOutlineX, HiOutlineSearch } from "react-icons/hi";
 import { useGlobalContext } from "../context";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState("");
-  const [searchBar, setSearchBar] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
     e.target.reset();
     if (search) {
-      setSearch("search");
+      setSearch("");
       navigate(`/search/${search}`);
     }
   };
@@ -60,25 +59,17 @@ const Navbar = (props) => {
                 }}
               />
               <form
-                className={
-                  nav || searchBar === true
-                    ? "hidden"
-                    : "ml-2 hidden lg:flex justify-center"
-                }
+                className="hidden w-full lg:ml-2 lg:flex justify-center mt-6"
                 onSubmit={handleSearch}
                 autoFocus
                 onChange={(e) => setSearch(e.target.value)}>
                 <input
                   type="text"
-                  name=""
-                  id=""
-                  autoFocus
                   placeholder="SEARCH"
-                  className="border-2 w-64 py-1 px-2 rounded"
+                  className="border-2 w-50 py-1 px-2 rounded"
                 />
                 <button
                   type="submit"
-                  onClick={() => setSearchBar(!searchBar)}
                   className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
                   GO
                 </button>
@@ -158,7 +149,9 @@ const Navbar = (props) => {
           </button>
         </form>
         <div className="mt-4">
-          <h4 className="font-bold font-franklin ml-[20%] mb-4">News</h4>
+          <h4 className="font-bold font-franklin w-full text-center mb-4">
+            News
+          </h4>
           <ul className="grid grid-cols-2 place-content-center mx-[20%] gap-4 mb-4">
             {sections.map((section, index) => {
               return (
@@ -176,10 +169,12 @@ const Navbar = (props) => {
                 </li>
               );
             })}
+            <li>
+              <Link to={"/feed"}>
+                <h4 className="font-bold text-center">Feed</h4>
+              </Link>
+            </li>
           </ul>
-          <Link to={"/feed"}>
-            <h4 className="font-bold font-franklin ml-[20%] mb-4">Feed</h4>
-          </Link>
         </div>
       </div>
     </div>
