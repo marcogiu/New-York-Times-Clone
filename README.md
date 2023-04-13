@@ -1,4 +1,4 @@
-<h1> HackerNews </h1>
+<h1> New York Times Clone </h1>
 
 React Project for Full Stack Development course of [start2impact](https://www.start2impact.it).
 
