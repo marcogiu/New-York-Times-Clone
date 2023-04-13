@@ -36,13 +36,13 @@ Live Demo: https://newyorktimes-clone.netlify.app/
 
 <center>
 <h4>Desktop View</h4> 
-<img src="../src/../New%20York%20Times%20Clone/src/img/metaimg.png" width=600>
+<img src="src/img/metaimg.png" width=600>
 
 <h4>Tablet View</h4> 
-<img src="../New%20York%20Times%20Clone/src/img/tabletView.png" width=400>
+<img src="src/img/tabletView.png" width=400>
 
 <h4>Mobile View</h4> 
-<img src="../New%20York%20Times%20Clone/src/img/mobileView.png" width=200>
+<img src="src/img/mobileView.png" width=200>
 </center>
 
 ## Contact
