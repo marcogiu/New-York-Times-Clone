@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+<h1> HackerNews </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Project for Full Stack Development course of [start2impact](https://www.start2impact.it).
 
-## Available Scripts
+Live Demo: https://newyorktimes-clone.netlify.app/
 
-In the project directory, you can run:
+<h2>Table of Contents</h2>
 
-### `npm start`
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Technologies Used</h3>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- HTML 5 
+- [Tailwind CSS](https://tailwindcss.com/)
+- Javascript 
+- [React](https://react.dev/)
+- [Create React App](https://create-react-app.dev/)
+- [React Router](https://reactrouter.com/en/main)
+- [React Icons](https://www.npmjs.com/package/react-icons)
+- [axios](https://axios-http.com/)             
+- [React Spinners](https://www.npmjs.com/package/react-spinners)
+- [New York Times API](https://developer.nytimes.com/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Responsive design
+- Current top stories are displayed in the homepage
+- Different news topic chosen from menù in mobile and tablet views, in desktop the topic are in the navbar
+- FeedPage different from the others
+- Ability to search news by keyword
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<center>
+<h4>Desktop View</h4> 
+<img src="../src/../New%20York%20Times%20Clone/src/img/metaimg.png" width=600>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h4>Tablet View</h4> 
+<img src="../New%20York%20Times%20Clone/src/img/tabletView.png" width=400>
 
-### `npm run eject`
+<h4>Mobile View</h4> 
+<img src="../New%20York%20Times%20Clone/src/img/mobileView.png" width=200>
+</center>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Created by Marco Giuliani: &nbsp; <img src="src/img/freelancer-freelance-icon.png" width=25px>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Website](https://marcogiu.github.io/myWebsite/) &nbsp; <img src="src/img/website-icon.svg" width=25px>
+- [Linkedin](https://www.linkedin.com/in/marco-giuliani-2a20b4179/) &nbsp; <img src="src/img/linkedin-icon.svg" width=25px>
+- [Twitter](https://twitter.com/Marco02351182) &nbsp; <img src="src/img/twitter-round-icon.svg" width=25px>
