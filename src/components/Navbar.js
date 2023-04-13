@@ -70,7 +70,7 @@ const Navbar = () => {
                 />
                 <button
                   type="submit"
-                  className="ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
+                  className="z-10 ml-2 bg-slate-300 text-xs p-2 rounded text-white font-bold">
                   GO
                 </button>
               </form>
@@ -84,7 +84,7 @@ const Navbar = () => {
               {todayDate}
             </p>
           </div>
-          <h1 className=" absolute left-[25%] right-[25%] text-center font-ancient text-2xl md:text-4xl lg:text-6xl ">
+          <h1 className="z-0 absolute left-[25%] right-[25%] text-center font-ancient text-2xl md:text-4xl lg:text-6xl ">
             <Link to={"/"}>The New York Times</Link>
           </h1>
           <HiOutlineX
