@@ -22,19 +22,17 @@ const AppProvider = ({ children }) => {
   ];
 
   const formatSection = (section) => {
-    if (section === "us") {
-      return "U.S.";
-    }
-    if (section === "nyregion") {
-      return "N.Y.";
-    }
-    if (section === "t-magazine") {
-      return "magazine";
-    }
-    if (section === "realestate") {
-      return "real estate";
-    } else {
-      return section;
+    switch (section) {
+      case "us":
+        return "U.S.";
+      case "nyregion":
+        return "N.Y";
+      case "t-magazine":
+        return "magazine";
+      case "realestate":
+        return "real estate";
+      default:
+        return section;
     }
   };
 

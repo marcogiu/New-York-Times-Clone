@@ -36,19 +36,19 @@ Live Demo: https://newyorktimes-clone.netlify.app/
 
 <center>
 <h4>Desktop View</h4> 
-<img src="src/img/metaimg.png" width=600>
+<img src="assets/img/metaimg.png" width=600>
 
 <h4>Tablet View</h4> 
-<img src="src/img/tabletView.png" width=400>
+<img src="assets/img/tabletView.png" width=400>
 
 <h4>Mobile View</h4> 
-<img src="src/img/mobileView.png" width=200>
+<img src="assets/img/mobileView.png" width=200>
 </center>
 
 ## Contact
 
-Created by Marco Giuliani: &nbsp; <img src="src/img/freelancer-freelance-icon.png" width=25px>
+Created by Marco Giuliani: &nbsp; <img src="assets/img/freelancer-freelance-icon.png" width=25px>
 
-- [Website](https://marcogiu.github.io/myWebsite/) &nbsp; <img src="src/img/website-icon.svg" width=25px>
-- [Linkedin](https://www.linkedin.com/in/marco-giuliani-2a20b4179/) &nbsp; <img src="src/img/linkedin-icon.svg" width=25px>
-- [Twitter](https://twitter.com/Marco02351182) &nbsp; <img src="src/img/twitter-round-icon.svg" width=25px>
+- [Website](https://marcogiu.github.io/myWebsite/) &nbsp; <img src="assets/img/website-icon.svg" width=25px>
+- [Linkedin](https://www.linkedin.com/in/marco-giuliani-2a20b4179/) &nbsp; <img src="assets/img/linkedin-icon.svg" width=25px>
+- [Twitter](https://twitter.com/Marco02351182) &nbsp; <img src="assets/img/twitter-round-icon.svg" width=25px>

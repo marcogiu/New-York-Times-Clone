@@ -20,7 +20,7 @@ const ArticleFeed = ({
     return new Date(date).toLocaleDateString("en-En", options);
   };
 
-  // show news
+  // show complete news = section+title+abstract+byline+multimedia
   if (
     section !== "admin" &&
     section &&

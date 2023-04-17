@@ -1,14 +1,19 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import { useParams } from "react-router-dom";
-import { useFetchHomepageData } from "../Hooks/useFetchHomepageData";
 import Article from "../components/Article";
 import { BounceLoader } from "react-spinners";
+import { useFetchData } from "../Hooks/useFetchData";
 
 const SectionPage = () => {
   const { nameSection } = useParams();
+
+  const urlSection = `https://api.nytimes.com/svc/topstories/v2/${nameSection}.json?api-key=${process.env.REACT_APP_API_KEY}`;
+
   const { formatSection } = useGlobalContext();
-  const { load, articles } = useFetchHomepageData(nameSection);
+  const { load, articles } = useFetchData(urlSection);
+
+  const articlesLoad = articles.results;
 
   if (load) {
     return (
@@ -17,7 +22,7 @@ const SectionPage = () => {
           {formatSection(nameSection) + " News"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-4">
-          {articles.map((article, index) => {
+          {articlesLoad.map((article, index) => {
             return <Article key={index} {...article} />;
           })}
         </div>

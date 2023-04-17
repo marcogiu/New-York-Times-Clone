@@ -1,15 +1,19 @@
 import React from "react";
-import { useFetchHomepageData } from "../Hooks/useFetchHomepageData";
 import { BounceLoader } from "react-spinners";
 import Article from "../components/Article";
+import { useFetchData } from "../Hooks/useFetchData";
 
 const Homepage = () => {
-  const { load, articles } = useFetchHomepageData("home");
+  const urlHome = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`;
+
+  const { load, articles } = useFetchData(urlHome);
+
+  const articlesLoad = articles.results;
 
   if (load) {
     return (
       <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-4">
-        {articles.map((article, index) => {
+        {articlesLoad.map((article, index) => {
           return <Article key={index} {...article} />;
         })}
       </div>
